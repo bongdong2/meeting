@@ -1,6 +1,7 @@
 package me.seungui.meeting.web;
 
 import lombok.RequiredArgsConstructor;
+import me.seungui.meeting.config.auth.LoginUser;
 import me.seungui.meeting.config.auth.dto.SessionUser;
 import me.seungui.meeting.domain.user.User;
 import me.seungui.meeting.service.posts.PostsService;
@@ -20,10 +21,8 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());
