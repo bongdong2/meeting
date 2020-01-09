@@ -41,6 +41,9 @@ test {
 	useJUnitPlatform()
 }
 */
+/*
+Execution failed for task ':test'.
+*/
 
 buildscript {
 	ext {
@@ -60,8 +63,9 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.jojoldu.book'
-version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+group = 'me.seungui'
+//version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
