@@ -15,7 +15,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r seungui-springboot-webservice *
+  - zip -r springboot-webservice *
   - mkdir -p deploy
   - mv seungui-springboot-webservice.zip deploy/seungui-springboot-webservice.zip
 
@@ -36,7 +36,7 @@ deploy:
     bucket: seungui-webservice-build # s3 버킷
     key: seungui-springboot-webservice.zip # 빌드 파일을 압축해서 전달
     bundle_type : zip
-    application : springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    application : seungui-springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
     deployment_group: seungui-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
