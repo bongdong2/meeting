@@ -15,7 +15,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springboot-webservice *
+  - zip -r seungui-springboot-webservice *
   - mkdir -p deploy
   - mv seungui-springboot-webservice.zip deploy/seungui-springboot-webservice.zip
 
