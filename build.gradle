@@ -65,7 +65,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'me.seungui'
 //version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
-version = '0.0.3-SNAPSHOT'
+version = '0.0.4-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
